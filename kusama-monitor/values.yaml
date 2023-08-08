@@ -1,0 +1,22 @@
+replicaCount: 1
+
+image:
+  repository: your-image-repo/kusama-monitor
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 3000
+
+resources: {}
+
+monitoring:
+  enabled: true
+  threshold: 100 # Customize the threshold
+
+alerting:
+  enabled: true
+  alertName: AccountBalanceLow
+  alertSeverity: critical
+  alertDescription: "Account balance is below the threshold"
