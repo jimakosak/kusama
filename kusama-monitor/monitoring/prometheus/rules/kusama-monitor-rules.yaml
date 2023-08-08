@@ -1,0 +1,11 @@
+groups:
+- name: KusamaAlerts
+  rules:
+  - alert: AccountBalanceLow
+    expr: kusama_account_balance < 10000
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Account balance is low"
+      description: "The balance for account {{ $labels.account }} is below the threshold."
