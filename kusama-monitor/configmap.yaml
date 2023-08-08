@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-kusama-monitor-env
+data:
+  .env: |
+    KUSAMA_RPC_ENDPOINT={{ .Values.env.KUSAMA_RPC_ENDPOINT }}
