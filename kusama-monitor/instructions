@@ -1,0 +1,40 @@
+Start a new cluster:
+minikube start
+
+Deploy the Prometheus Operator:
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm install my-monitoring prometheus-community/kube-prometheus-stack
+
+Deploy your application:
+helm install my-kusama-monitor ./my-kusama-monitor
+
+Access the Prometheus and AlertManager UIs through port forwarding or by retrieving the service URLs.
+
+Monitor logs and alerts as needed.
+
+
+Useful commands:
+
+To initialize a new project:
+npm init -y 
+
+Install the necessary dependencies:
+npm install --save @polkadot/api dotenv typescript
+npm install --save-dev ts-node
+
+Run the application:
+npm start
+
+
+Terminal output after running the application:
+
+ % npm start
+
+> kusama-monitor@1.0.0 start
+> ts-node index.ts
+
+Connected to wss://kusama-rpc.polkadot.io/
+
+
+Initialize a new Helm chart in your project directory:
+helm create my-kusama-monitor
